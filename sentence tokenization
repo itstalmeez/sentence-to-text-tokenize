@@ -1,0 +1,14 @@
+import spacy
+
+def sentence_tokenization(text):
+    nlp = spacy.load("en_core_web_sm")
+
+    doc = nlp(text)
+    sentences = [sent.text for sent in doc.sents]
+
+    return sentences
+
+input_text = "Natural Language Processing (NLP) is a field of artificial intelligence that focuses on the interaction between computers and humans through natural language. It involves various tasks such as text processing, sentiment analysis, named entity recognition, and machine translation. NLP plays a crucial role in many real-world applications, including chatbots, virtual assistants, and language translation systems."
+sentences = sentence_tokenization(input_text)
+for i, sent in enumerate(sentences, 1):
+    print(f"{i}. {sent}")
