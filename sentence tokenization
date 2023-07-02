@@ -1,0 +1,7 @@
+import spacy
+
+nlp = spacy.load("en_core_web_sm")
+doc = nlp("I live in the U.S.A.")
+
+for tokens in doc:
+    print(tokens)
