@@ -1,0 +1,7 @@
+import spacy
+
+nlp = spacy.load("en_core_web_sm")
+doc = nlp("""Talmeez is the first person who is learning NLP from the Codebasics
+          can you elaborate how difficult it be. I knwo it's muc harder than anything else""")
+for token in doc:
+    print(token.text)
